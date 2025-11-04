@@ -119,5 +119,13 @@
         "C++": {
             "formatter": "language_server"
         }
+    },
+
+    "lsp": {
+        "clangd": {
+            "binary": {
+                "arguments": ["--header-insertion=never"]
+            }
+        }
     }
 }
