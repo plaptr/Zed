@@ -1,0 +1,186 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == normal",
+        "bindings": {
+            "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+            "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+            "s": "vim::PushAddSurrounds"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == visual",
+        "bindings": {
+            "v": "vim::SelectLargerSyntaxNode",
+            "s": "vim::PushAddSurrounds"
+        }
+    },
+    {
+        "context": "vim_operator == a || vim_operator == i || vim_operator == cs || vim_operator == ds || vim_operator == s",
+        "bindings": {
+            // Traditional Vim behavior
+            "q": "vim::AnyQuotes",
+            "b": "vim::AnyBrackets",
+
+            // mini.ai plugin behavior
+            "Q": "vim::MiniQuotes",
+            "B": "vim::MiniBrackets"
+        }
+    },
+    {
+        "bindings": {
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-j": "workspace::ActivatePaneDown",
+            "ctrl-k": "workspace::ActivatePaneUp"
+        }
+    },
+    {
+        "context": "(vim_mode == insert && !(showing_code_actions || showing_completions))",
+        "bindings": {
+            "ctrl-space": "editor::ShowWordCompletions"
+        }
+    },
+    {
+        "context": "showing_code_actions || showing_completions ",
+        "bindings": {
+            "ctrl-j": "editor::ContextMenuNext",
+            "ctrl-k": "editor::ContextMenuPrevious"
+        }
+    },
+    {
+        "context": "Picker > Editor",
+        "bindings": {
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious"
+        }
+    },
+    {
+        "context": "Pane",
+        "bindings": {
+            "ctrl-w": null,
+            "ctrl-w q": "pane::CloseActiveItem"
+        }
+    },
+
+    {
+        // "context": "vim_mode == normal || not_editing || EmptyPane",
+        "context": "(Workspace && !Editor && !Terminal) || (Editor && VimControl)",
+        "bindings": {
+            // PICKER
+            "space p f": "file_finder::Toggle",
+            "space p w": "workspace::NewSearch",
+            "space p c": "command_palette::Toggle",
+            "space p p": "projects::OpenRecent",
+            "space p s": "project_symbols::Toggle",
+
+            // UI
+            "space u h": "workspace::CloseAllDocks",
+            "space u f": "zed::ToggleFullScreen",
+            "space u x": "zed::Extensions",
+            "space u e": "vim::ToggleProjectPanelFocus",
+            "space u g": "git_panel::ToggleFocus",
+            "space u p": "diagnostics::Deploy",
+            "space u d": "debug_panel::ToggleFocus",
+            "space u t": "terminal_panel::Toggle",
+
+            // CODE
+            "space c a": "editor::ToggleCodeActions",
+            "space c r": "editor::Rename",
+            "space c h": "editor::SwitchSourceHeader",
+
+            // DEBUG
+            "space d b": "editor::ToggleBreakpoint",
+            "space d B": "debugger::ClearAllBreakpoints",
+            "space d c": [
+                "task::Spawn",
+                {
+                    "task_name": "Build"
+                }
+            ],
+            "space d d": "debugger::Start",
+            "space d s": "debugger::Stop",
+            "space d m": "debugger::RunToCursor",
+            "space d l": "debugger::Continue",
+            "space d p": "debugger::Pause"
+        }
+    },
+    {
+        "context": "vim_mode == normal",
+        "bindings": {
+            "] c": null
+        }
+    },
+    {
+        "context": "vim_operator == helix_next",
+        "bindings": {
+            "c": null
+        }
+    },
+    {
+        "context": "vim_operator == helix_previous",
+        "bindings": {
+            "c": null
+        }
+    },
+    {
+        "context": "vim_mode == normal",
+        "bindings": {
+            "[ c": null
+        }
+    },
+    {
+        "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
+        "bindings": {
+            "alt-c": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-'": null
+        }
+    },
+    {
+        "context": "vim_operator == d",
+        "bindings": {
+            "o": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-shift-'": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "alt-,": null
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "alt-.": null
+        }
+    }
+]
