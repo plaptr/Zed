@@ -91,6 +91,7 @@
             "space p c": "command_palette::Toggle",
             "space p p": "projects::OpenRecent",
             "space p s": "project_symbols::Toggle",
+            "space p g": "agent::ToggleFocus",
 
             // UI
             "space u h": "workspace::CloseAllDocks",

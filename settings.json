@@ -55,7 +55,7 @@
         "model_parameters": []
     },
     "debugger": {
-        "dock": "right"
+        "dock": "bottom"
     },
     "collaboration_panel": {
         "dock": "right"
