@@ -38,7 +38,6 @@
         "**/.docker"
     ],
     "show_edit_predictions": true,
-
     "features": {
         "edit_prediction_provider": "supermaven"
     },
@@ -148,16 +147,18 @@
         "use_smartcase_find": true
     },
     "format_on_save": "on",
+    "formatter": "language_server",
     "languages": {
         "C++": {
             "formatter": "language_server"
         }
     },
-
     "lsp": {
         "clangd": {
             "binary": {
-                "arguments": ["--header-insertion=never"]
+                "arguments": [
+                    "--header-insertion=never"
+                ]
             }
         }
     }
