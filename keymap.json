@@ -13,11 +13,18 @@
         }
     },
     {
+        "context": "(VimControl && !menu)",
+        "bindings": {
+            "enter": "editor::OpenExcerpts"
+        }
+    },
+    {
         "context": "Editor && vim_mode == normal",
         "bindings": {
             "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
             "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
-            "s": "vim::PushAddSurrounds"
+            "s": "vim::PushAddSurrounds",
+            "g r": "editor::FindAllReferences"
         }
     },
     {
@@ -87,11 +94,11 @@
         "bindings": {
             // PICKER
             "space p f": "file_finder::Toggle",
-            "space p w": "workspace::NewSearch",
+            "space p w": "pane::DeploySearch",
             "space p c": "command_palette::Toggle",
             "space p p": "projects::OpenRecent",
             "space p s": "project_symbols::Toggle",
-            "space p g": "agent::ToggleFocus",
+            "space p t": ["task::Spawn", { "task_name": "television_words" }],
 
             // UI
             "space u h": "workspace::CloseAllDocks",
@@ -102,6 +109,7 @@
             "space u p": "diagnostics::Deploy",
             "space u d": "debug_panel::ToggleFocus",
             "space u t": "terminal_panel::Toggle",
+            "space u c": "agent::ToggleFocus",
 
             // CODE
             "space c a": "editor::ToggleCodeActions",
@@ -182,6 +190,13 @@
         "context": "Editor",
         "bindings": {
             "alt-.": null
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "ctrl-j": ["workspace::SendKeystrokes", "down"],
+            "ctrl-k": ["workspace::SendKeystrokes", "up"]
         }
     }
 ]
