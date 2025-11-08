@@ -21,8 +21,14 @@
     {
         "context": "Editor && vim_mode == normal",
         "bindings": {
-            "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
-            "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+            "ctrl-d": [
+                "workspace::SendKeystrokes",
+                "ctrl-d z z"
+            ],
+            "ctrl-u": [
+                "workspace::SendKeystrokes",
+                "ctrl-u z z"
+            ],
             "s": "vim::PushAddSurrounds",
             "g r": "editor::FindAllReferences"
         }
@@ -46,7 +52,6 @@
             // Traditional Vim behavior
             "q": "vim::AnyQuotes",
             "b": "vim::AnyBrackets",
-
             // mini.ai plugin behavior
             "Q": "vim::MiniQuotes",
             "B": "vim::MiniBrackets"
@@ -87,7 +92,6 @@
             "ctrl-w q": "pane::CloseActiveItem"
         }
     },
-
     {
         // "context": "vim_mode == normal || not_editing || EmptyPane",
         "context": "(Workspace && !Editor && !Terminal) || (Editor && VimControl)",
@@ -98,8 +102,12 @@
             "space p c": "command_palette::Toggle",
             "space p p": "projects::OpenRecent",
             "space p s": "project_symbols::Toggle",
-            "space p t": ["task::Spawn", { "task_name": "television_words" }],
-
+            "space p t": [
+                "task::Spawn",
+                {
+                    "task_name": "television_words"
+                }
+            ],
             // UI
             "space u h": "workspace::CloseAllDocks",
             "space u f": "zed::ToggleFullScreen",
@@ -110,12 +118,10 @@
             "space u d": "debug_panel::ToggleFocus",
             "space u t": "terminal_panel::Toggle",
             "space u c": "agent::ToggleFocus",
-
             // CODE
             "space c a": "editor::ToggleCodeActions",
             "space c r": "editor::Rename",
             "space c h": "editor::SwitchSourceHeader",
-
             // DEBUG
             "space d b": "editor::ToggleBreakpoint",
             "space d B": "debugger::ClearAllBreakpoints",
@@ -191,12 +197,12 @@
         "bindings": {
             "alt-.": null
         }
-    },
-    {
-        "context": "Terminal",
-        "bindings": {
-            "ctrl-j": ["workspace::SendKeystrokes", "down"],
-            "ctrl-k": ["workspace::SendKeystrokes", "up"]
-        }
     }
+    // ,{
+    //     "context": "Terminal",
+    //     "bindings": {
+    //         "ctrl-j": ["workspace::SendKeystrokes", "down"],
+    //         "ctrl-k": ["workspace::SendKeystrokes", "up"]
+    //     }
+    // }
 ]
