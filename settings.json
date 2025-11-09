@@ -123,6 +123,8 @@
     },
     "buffer_font_family": "Lilex",
     "terminal": {
+        "default_height": 720,
+        "dock": "bottom",
         "font_family": "Lilex"
     },
     "base_keymap": "VSCode",

@@ -34,12 +34,6 @@
         }
     },
     {
-        "context": "Editor && vim_mode == insert",
-        "bindings": {
-            // "j k": "vim::NormalBefore"
-        }
-    },
-    {
         "context": "Editor && vim_mode == visual",
         "bindings": {
             "v": "vim::SelectLargerSyntaxNode",
@@ -62,7 +56,9 @@
             "ctrl-l": "workspace::ActivatePaneRight",
             "ctrl-h": "workspace::ActivatePaneLeft",
             "ctrl-j": "workspace::ActivatePaneDown",
-            "ctrl-k": "workspace::ActivatePaneUp"
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-/": "terminal_panel::Toggle",
+            "ctrl-q": null
         }
     },
     {
@@ -82,14 +78,59 @@
         "context": "Picker > Editor",
         "bindings": {
             "ctrl-j": "menu::SelectNext",
-            "ctrl-k": "menu::SelectPrevious"
+            "ctrl-k": "menu::SelectPrevious",
+            "ctrl-[": "menu::Cancel"
         }
     },
     {
         "context": "Pane",
         "bindings": {
             "ctrl-w": null,
-            "ctrl-w q": "pane::CloseActiveItem"
+            "ctrl-w shift-q": "pane::CloseActiveItem",
+            "ctrl-w q": "pane::CloseActiveItem",
+            "ctrl-w v": "pane::SplitRight",
+            "ctrl-w s": "pane::SplitDown",
+            "ctrl-w shift-h": "workspace::MovePaneLeft",
+            "ctrl-w shift-l": "workspace::MovePaneRight",
+            "ctrl-w shift-k": "workspace::MovePaneUp",
+            "ctrl-w shift-j": "workspace::MovePaneDown",
+            "ctrl-1": [
+                "pane::ActivateItem",
+                0
+            ],
+            "ctrl-2": [
+                "pane::ActivateItem",
+                1
+            ],
+            "ctrl-3": [
+                "pane::ActivateItem",
+                2
+            ],
+            "ctrl-4": [
+                "pane::ActivateItem",
+                3
+            ],
+            "ctrl-5": [
+                "pane::ActivateItem",
+                4
+            ],
+            "ctrl-6": [
+                "pane::ActivateItem",
+                5
+            ],
+            "ctrl-7": [
+                "pane::ActivateItem",
+                6
+            ],
+            "ctrl-8": [
+                "pane::ActivateItem",
+                7
+            ],
+            "ctrl-9": [
+                "pane::ActivateItem",
+                8
+            ],
+            "ctrl-0": "pane::ActivateLastItem",
         }
     },
     {
@@ -102,12 +143,7 @@
             "space p c": "command_palette::Toggle",
             "space p p": "projects::OpenRecent",
             "space p s": "project_symbols::Toggle",
-            "space p t": [
-                "task::Spawn",
-                {
-                    "task_name": "television_words"
-                }
-            ],
+            "space p t": "task::Spawn",
             // UI
             "space u h": "workspace::CloseAllDocks",
             "space u f": "zed::ToggleFullScreen",
@@ -138,71 +174,64 @@
             "space d p": "debugger::Pause"
         }
     },
-    {
-        "context": "vim_mode == normal",
-        "bindings": {
-            "] c": null
-        }
-    },
-    {
-        "context": "vim_operator == helix_next",
-        "bindings": {
-            "c": null
-        }
-    },
-    {
-        "context": "vim_operator == helix_previous",
-        "bindings": {
-            "c": null
-        }
-    },
-    {
-        "context": "vim_mode == normal",
-        "bindings": {
-            "[ c": null
-        }
-    },
-    {
-        "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
-        "bindings": {
-            "alt-c": null
-        }
-    },
-    {
-        "context": "Editor",
-        "bindings": {
-            "ctrl-'": null
-        }
-    },
-    {
-        "context": "vim_operator == d",
-        "bindings": {
-            "o": null
-        }
-    },
-    {
-        "context": "Editor",
-        "bindings": {
-            "ctrl-shift-'": null
-        }
-    },
-    {
-        "context": "Editor",
-        "bindings": {
-            "alt-,": null
-        }
-    },
-    {
-        "context": "Editor",
-        "bindings": {
-            "alt-.": null
-        }
-    }
-    // ,{
-    //     "context": "Terminal",
+    // {
+    //     "context": "vim_mode == normal",
     //     "bindings": {
-    //         "ctrl-j": ["workspace::SendKeystrokes", "down"],
-    //         "ctrl-k": ["workspace::SendKeystrokes", "up"]
+    //         "] c": null
     //     }
-    // }
+    // },
+    // {
+    //     "context": "vim_operator == helix_next",
+    //     "bindings": {
+    //         "c": null
+    //     }
+    // },
+    // {
+    //     "context": "vim_operator == helix_previous",
+    //     "bindings": {
+    //         "c": null
+    //     }
+    // },
+    // {
+    //     "context": "vim_mode == normal",
+    //     "bindings": {
+    //         "[ c": null
+    //     }
+    // },
+    // {
+    //     "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
+    //     "bindings": {
+    //         "alt-c": null
+    //     }
+    // },
+    // {
+    //     "context": "Editor",
+    //     "bindings": {
+    //         "ctrl-'": null
+    //     }
+    // },
+    // {
+    //     "context": "vim_operator == d",
+    //     "bindings": {
+    //         "o": null
+    //     }
+    // },
+    // {
+    //     "context": "Editor",
+    //     "bindings": {
+    //         "ctrl-shift-'": null
+    //     }
+    // },
+    // {
+    //     "context": "Editor",
+    //     "bindings": {
+    //         "alt-,": null
+    //     }
+    // },
+    // {
+    //     "context": "Editor",
+    //     "bindings": {
+    //         "alt-.": null
+    //     }
+    // },
 ]
