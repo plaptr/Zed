@@ -88,6 +88,7 @@
             "ctrl-w": null,
             "ctrl-w shift-q": "pane::CloseActiveItem",
             "ctrl-w q": "pane::CloseActiveItem",
+            "ctrl-w ctrl-q": "pane::CloseActiveItem",
             "ctrl-w v": "pane::SplitRight",
             "ctrl-w s": "pane::SplitDown",
             "ctrl-w shift-h": "workspace::MovePaneLeft",
