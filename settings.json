@@ -60,7 +60,7 @@
         "dock": "right"
     },
     "outline_panel": {
-        "dock": "right"
+        "dock": "left"
     },
     "git_panel": {
         "dock": "right"
