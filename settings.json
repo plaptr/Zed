@@ -128,7 +128,8 @@
         "font_family": "Lilex"
     },
     "base_keymap": "VSCode",
-    "relative_line_numbers": true,
+    "relative_line_numbers": "enabled",
+    "soft_wrap": "none",
     "gutter": {
         "runnables": true,
         "folds": false,
@@ -136,7 +137,6 @@
     },
     "cursor_shape": "bar",
     "cursor_blink": false,
-    "soft_wrap": "none",
     "tab_size": 4,
     "vim_mode": true,
     "agent_ui_font_size": 16,
