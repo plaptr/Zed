@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "enable_language_server": true,
     "file_scan_exclusions": [
         // "build/*cmake*",
         // "build/*CMake*",
@@ -162,6 +163,16 @@
                     "--header-insertion=never"
                 ]
             }
+        }
+    },
+    "colorize_brackets": true,
+    "theme_overrides": {
+        "One Dark Pro": {
+            "accents": [
+                "#ffd700",
+                "#c678dd",
+                "#61afef"
+            ]
         }
     }
 }

@@ -142,9 +142,9 @@
             "space p f": "file_finder::Toggle",
             "space p w": "pane::DeploySearch",
             "space p c": "command_palette::Toggle",
-            "space p o": "outline::Toggle",
+            "space p s": "outline::Toggle",
             "space p p": "projects::OpenRecent",
-            "space p s": "project_symbols::Toggle",
+            "space p o": "project_symbols::Toggle",
             "space p t": "task::Spawn",
             // UI
             "space u h": "workspace::CloseAllDocks",
