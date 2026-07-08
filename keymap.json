@@ -7,6 +7,21 @@
 // from the command palette.
 [
     {
+        "context": "VimControl && !menu && vim_mode != operator",
+        "bindings": {
+            "w": "vim::NextSubwordStart",
+            "b": "vim::PreviousSubwordStart",
+            "e": "vim::NextSubwordEnd",
+            "g e": "vim::PreviousSubwordEnd"
+        }
+    },
+    {
+        "context": "vim_mode == normal || vim_mode == visual",
+        "bindings": {
+            "r": "vim::HelixJumpToWord",
+        }
+    },
+    {
         "context": "Workspace",
         "bindings": {
             // "shift shift": "file_finder::Toggle"
@@ -44,11 +59,11 @@
         "context": "vim_operator == a || vim_operator == i || vim_operator == cs || vim_operator == ds || vim_operator == s",
         "bindings": {
             // Traditional Vim behavior
-            "q": "vim::AnyQuotes",
-            "b": "vim::AnyBrackets",
+            "Q": "vim::AnyQuotes",
+            "B": "vim::AnyBrackets",
             // mini.ai plugin behavior
-            "Q": "vim::MiniQuotes",
-            "B": "vim::MiniBrackets"
+            "q": "vim::MiniQuotes",
+            "b": "vim::MiniBrackets"
         }
     },
     {
@@ -140,7 +155,8 @@
         "bindings": {
             // PICKER
             "space p f": "file_finder::Toggle",
-            "space p w": "pane::DeploySearch",
+            "space p g": "pane::DeploySearch",
+            "space p w": "text_finder::Toggle",
             "space p c": "command_palette::Toggle",
             "space p s": "outline::Toggle",
             "space p p": "projects::OpenRecent",

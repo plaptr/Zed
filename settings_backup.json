@@ -7,45 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "which_key": {
-        "delay_ms": 0,
-        "enabled": true
-    },
-    "buffer_font_size": 15.5,
-    "cli_default_open_behavior": "existing_window",
-    "agent": {
-        "tool_permissions": {
-            "tools": {
-                "search_web": {
-                    "default": "allow"
-                }
-            }
-        },
-        "default_profile": "ask",
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-sonnet-5",
-            "enable_thinking": true,
-            "effort": "high"
-        },
-        "favorite_models": [],
-        "model_parameters": []
-    },
-    "indent_guides": {
-        "coloring": "indent_aware",
-        "line_width": 1,
-        "enabled": true
-    },
-    "inlay_hints": {},
-    "minimap": {
-        "show": "never"
-    },
-    "unnecessary_code_fade": 0.3,
-    "telemetry": {
-        "diagnostics": true,
-        "metrics": false,
-        "anthropic_retention": false
-    },
     "enable_language_server": true,
     "file_scan_exclusions": [
         // "build/*cmake*",
@@ -78,6 +39,21 @@
         // "**/.docker"
     ],
     "show_edit_predictions": true,
+    "features": {
+        "edit_prediction_provider": "supermaven"
+    },
+    "agent": {
+        "inline_assistant_model": {
+            "provider": "google",
+            "model": "gemini-2.5-flash"
+        },
+        "default_profile": "ask",
+        "default_model": {
+            "provider": "google",
+            "model": "gemini-2.5-flash"
+        },
+        "model_parameters": []
+    },
     "debugger": {
         "dock": "bottom"
     },
@@ -93,11 +69,7 @@
     "project_panel": {
         "dock": "right"
     },
-    "icon_theme": {
-        "mode": "light",
-        "light": "Material Icon Theme",
-        "dark": "Material Icon Theme"
-    },
+    "icon_theme": "Material Icon Theme",
     "calls": {
         "mute_on_join": true
     },
@@ -124,7 +96,8 @@
         "show_sign_in": false,
         "show_onboarding_banner": false,
         "show_user_picture": false,
-        "show_menus": false
+        "show_menus": false,
+        "show_branch_icon": false
     },
     "use_smartcase_search": true,
     "diagnostics": {
@@ -135,8 +108,13 @@
     "prettier": {
         "allowed": true
     },
+    "indent_guides": {
+        "background_coloring": "disabled",
+        "coloring": "indent_aware",
+        "enabled": false
+    },
     "toolbar": {
-        "code_actions": true,
+        "code_actions": false,
         "quick_actions": true,
         "breadcrumbs": true
     },
@@ -144,7 +122,7 @@
     "buffer_line_height": {
         "custom": 1.1
     },
-    "buffer_font_family": ".ZedMono",
+    "buffer_font_family": "Lilex",
     "terminal": {
         "default_height": 720,
         "dock": "bottom",
@@ -154,23 +132,19 @@
     "relative_line_numbers": "enabled",
     "soft_wrap": "none",
     "gutter": {
-        "bookmarks": true,
         "runnables": true,
         "folds": false,
         "line_numbers": true
     },
-    "cursor_shape": "block",
+    "cursor_shape": "bar",
     "cursor_blink": false,
     "tab_size": 4,
     "vim_mode": true,
-    "agent_ui_font_size": 15.0,
+    "agent_ui_font_size": 16,
     "agent_buffer_font_size": 12,
-    "ui_font_size": 15.0,
-    "theme": {
-        "mode": "dark",
-        "light": "One Light",
-        "dark": "Modest Dark"
-    },
+    "ui_font_size": 15,
+    "buffer_font_size": 15.0,
+    "theme": "One Dark Pro",
     "vim": {
         "use_system_clipboard": "always",
         "use_smartcase_find": true
@@ -183,26 +157,6 @@
         }
     },
     "lsp": {
-        "tinymist": {
-            "initialization_options": {
-                // Enable background preview
-                // Server will be running on 127.0.0.1:23635
-                "preview": {
-                    "invertColors": "always",
-                    "background": {
-                        "enabled": true,
-                    },
-                },
-            },
-            "settings": {
-                // Compile on save
-                // This will compile a PDF for the `main.typ` file in the project root.
-                "exportPdf": "onSave",
-                "outputPath": "$root/$name",
-                // Enable formatter
-                "formatterMode": "typstyle",
-            }
-        },
         "clangd": {
             "binary": {
                 "arguments": [
@@ -219,6 +173,6 @@
                 "#c678dd",
                 "#61afef"
             ]
-        },
+        }
     }
 }

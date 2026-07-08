@@ -1,7 +1,6 @@
 // Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
 //
 // Example:
-
 [
     {
         "label": "Build",
@@ -15,6 +14,18 @@
         "reveal_target": "center",
         "allow_concurrent_runs": true,
         "use_new_terminal": true
+    },
+    {
+        "label": "Open Typst Preview",
+        "command": "start http://127.0.0.1:23635/",
+        "use_new_terminal": true,
+        "allow_concurrent_runs": false,
+        "reveal": "never",
+        "reveal_target": "dock",
+        "hide": "always",
+        "shell": "system",
+        "show_summary": true,
+        "show_command": true
     }
     // {
     //     "label": "Build",
