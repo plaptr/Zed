@@ -45,14 +45,16 @@
                 "ctrl-u z z"
             ],
             "s": "vim::PushAddSurrounds",
-            "g r": "editor::FindAllReferences"
+            "g r": "editor::FindAllReferences",
+            "shift-r": "vim::Exchange"
         }
     },
     {
         "context": "Editor && vim_mode == visual",
         "bindings": {
             "v": "vim::SelectLargerSyntaxNode",
-            "s": "vim::PushAddSurrounds"
+            "s": "vim::PushAddSurrounds",
+            "shift-r": "vim::Exchange"
         }
     },
     {
