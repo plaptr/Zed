@@ -220,5 +220,13 @@
                 "#61afef"
             ]
         },
+        "Modest Dark": {
+            "accents": [
+                "#ffd700",
+                "#c678dd",
+                "#61afef"
+            ],
+            "editor.active_line.background": "#171C26"
+        },
     }
 }
