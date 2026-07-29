@@ -7,15 +7,59 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "proxy": "",
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        },
+        "opencode": {
+            "default_config_options": {
+                "mode": "plan",
+                "model": "opencode/big-pickle"
+            },
+            "type": "registry"
+        },
+        "gemini": {
+            "type": "registry"
+        },
+        "sigit": {
+            "default_config_options": {
+                "sigit-model": "bartowski/Qwen2.5-3B-Instruct-GGUF"
+            },
+            "type": "registry"
+        }
+    },
+    "buffer_font_size": 16,
+    "agent_ui_font_size": 15.5,
+    "agent_buffer_font_size": 15.5,
+    "ui_font_size": 14.5,
+    "buffer_line_height": {
+        "custom": 1.1
+    },
+    // "buffer_font_family": ".ZedMono",
+    "buffer_font_family": "Liberation Mono",
+    "ui_font_family": "Liberation Mono",
+    // "buffer_font_family": "JetBrainsMono Nerd Font",
+    "terminal": {
+        "toolbar": {
+            "breadcrumbs": false
+        },
+        "default_height": 720,
+        "dock": "bottom",
+        "font_size": 14,
+        "font_family": "Liberation Mono"
+    },
     "which_key": {
         "delay_ms": 0,
         "enabled": true
     },
-    "buffer_font_size": 15.5,
     "cli_default_open_behavior": "existing_window",
     "agent": {
         "tool_permissions": {
             "tools": {
+                "fetch": {
+                    "default": "allow"
+                },
                 "search_web": {
                     "default": "allow"
                 }
@@ -23,10 +67,9 @@
         },
         "default_profile": "ask",
         "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-sonnet-5",
-            "enable_thinking": true,
-            "effort": "high"
+            "provider": "google",
+            "model": "gemini-2.5-flash-lite",
+            "enable_thinking": true
         },
         "favorite_models": [],
         "model_parameters": []
@@ -136,24 +179,19 @@
         "allowed": true
     },
     "toolbar": {
+        "agent_review": true,
+        "selections_menu": true,
         "code_actions": true,
-        "quick_actions": true,
+        "quick_actions": false,
         "breadcrumbs": true
     },
     "helix_mode": false,
-    "buffer_line_height": {
-        "custom": 1.1
-    },
-    "buffer_font_family": ".ZedMono",
-    "terminal": {
-        "default_height": 720,
-        "dock": "bottom",
-        "font_family": "Lilex"
-    },
     "base_keymap": "VSCode",
     "relative_line_numbers": "enabled",
     "soft_wrap": "none",
     "gutter": {
+        "min_line_number_digits": 4,
+        "breakpoints": true,
         "bookmarks": true,
         "runnables": true,
         "folds": false,
@@ -163,15 +201,13 @@
     "cursor_blink": false,
     "tab_size": 4,
     "vim_mode": true,
-    "agent_ui_font_size": 15.0,
-    "agent_buffer_font_size": 12,
-    "ui_font_size": 15.0,
     "theme": {
         "mode": "dark",
         "light": "One Light",
         "dark": "Modest Dark"
     },
     "vim": {
+        "toggle_relative_line_numbers": false,
         "use_system_clipboard": "always",
         "use_smartcase_find": true
     },
@@ -226,7 +262,8 @@
                 "#c678dd",
                 "#61afef"
             ],
-            "editor.active_line.background": "#171C26"
+            "editor.active_line.background": "#171C26",
+            "search.match_background": "#16A25C"
         },
     }
 }

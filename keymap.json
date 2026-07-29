@@ -254,4 +254,11 @@
     //         "alt-.": null
     //     }
     // },
+
+    {
+        "context": "vim_mode == insert || vim_mode == normal",
+        "bindings": {
+            "ctrl-s": "editor::ShowSignatureHelp"
+        }
+    }
 ]
