@@ -6,6 +6,14 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+    // GLOBAL
+    {
+        "bindings": {
+            "ctrl-o": "pane::GoBack",
+            "ctrl-i": "pane::GoForward",
+            "ctrl-t": "terminal_panel::Toggle",
+        }
+    },
     {
         "context": "VimControl && !menu && vim_mode != operator",
         "bindings": {
@@ -254,11 +262,10 @@
     //         "alt-.": null
     //     }
     // },
-
     {
         "context": "vim_mode == insert || vim_mode == normal",
         "bindings": {
             "ctrl-s": "editor::ShowSignatureHelp"
         }
-    }
+    },
 ]
