@@ -36,7 +36,7 @@
         "opencode": {
             "default_config_options": {
                 "mode": "plan",
-                "model": "opencode/big-pickle",
+                "model": "opencode/deepseek-v4-flash-free"
             },
             "type": "registry",
         },
@@ -109,6 +109,9 @@
         "show_background": false,
         "enabled": false,
     },
+    "inlay_hints": {
+        "enabled": false
+    },
     "minimap": {
         "show": "never",
     },
@@ -152,19 +155,30 @@
     ],
     "show_edit_predictions": true,
     "debugger": {
-        "dock": "right",
+        "button": true,
+        "stepping_granularity": "statement",
+        "dock": "right"
     },
     "collaboration_panel": {
         "dock": "right",
     },
     "outline_panel": {
-        "dock": "right",
+        "file_icons": true,
+        "dock": "left"
     },
     "git_panel": {
-        "dock": "right",
+        "scrollbar": {
+            "show": "auto"
+        },
+        "dock": "right"
     },
     "project_panel": {
-        "dock": "right",
+        "sort_mode": "directories_first",
+        "hide_hidden": false,
+        "hide_root": false,
+        "git_status_indicator": false,
+        "diagnostic_badges": true,
+        "dock": "right"
     },
     "icon_theme": {
         "mode": "light",
@@ -186,10 +200,12 @@
     "use_system_window_tabs": false,
     "bottom_dock_layout": "full",
     "tab_bar": {
-        "show": false,
+        "show_pinned_tabs_in_separate_row": false,
+        "show": false
     },
     "tabs": {
-        "git_status": false,
+        "file_icons": false,
+        "git_status": false
     },
     "title_bar": {
         "show_project_items": true,
@@ -218,7 +234,6 @@
     "helix_mode": false,
     "base_keymap": "VSCode",
     "relative_line_numbers": "enabled",
-    "soft_wrap": "none",
     "gutter": {
         "min_line_number_digits": 4,
         "breakpoints": false,
@@ -237,10 +252,21 @@
         "dark": "One Dark Pro",
     },
     "vim": {
-        "toggle_relative_line_numbers": false,
+        "use_regex_search": true,
+        "gdefault": true,
+        "toggle_relative_line_numbers": true,
         "use_system_clipboard": "always",
         "use_smartcase_find": true,
     },
+    "cursor_blink": false,
+    "command_aliases": {
+        "W": "w",
+        "Wq": "wq",
+        "Q": "q",
+        "Qa": "qa",
+    },
+    "preferred_line_length": 80,
+    "show_wrap_guides": true,
     "format_on_save": "on",
     "formatter": "language_server",
     "languages": {
@@ -277,7 +303,11 @@
             },
         },
     },
+    "semantic_tokens": "combined",
     "colorize_brackets": true,
+    "selection_highlight": false,
+    "lsp_highlight_debounce": 20000000000000,
+    "current_line_highlight": "none",
     "theme_overrides": {
         "One Dark Pro Vivid": {
             "accents": [
@@ -308,6 +338,19 @@
             ],
             "editor.active_line.background": "#171C26",
             "search.match_background": "#16A25C",
+        },
+        "Base16 Colors": {
+            // "accents": [
+            //     "#ffd700",
+            //     "#c678dd",
+            //     "#61afef"
+            // ],
+            // "editor.active_line.background": "#171C26",
+            "search.match_background": "#16A25C",
+            "search.active_match_background": "#F00",
+            "editor.document_highlight.write_background": "#FFFFFF00",
+            "editor.document_highlight.read_background": "#FFFFFF00",
+            "editor.document_highlight.bracket_background": "#FFFFFF00",
         },
     },
 }
