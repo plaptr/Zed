@@ -3,39 +3,49 @@
 // Example:
 [
     {
-        "label": "Build",
-        "command": "${ZED_WORKTREE_ROOT}/build",
-        "reveal": "no_focus"
-    },
-    {
-        "label": "television_words",
-        "command": "zed \"$(tv --exact text)\"",
+        "label": "findonline",
+        // "command": "open 'https://duckduckgo.com/\\?q=ducky $ZED_SYMBOL'",
+        "command": "python3 -c '\nimport os, re, urllib.parse, subprocess\n\nsel = os.environ.get(\"ZED_SELECTED_TEXT\", \"\").strip()\nif not sel and os.environ.get(\"ZED_FILE\"):\n    try:\n        row = int(os.environ.get(\"ZED_ROW\", 1)) - 1\n        col = int(os.environ.get(\"ZED_COLUMN\", 1)) - 1\n        with open(os.environ[\"ZED_FILE\"]) as f:\n            line = f.readlines()[row]\n        for m in re.finditer(r\"\\w+\", line):\n            if m.start() <= col <= m.end():\n                sel = m.group(0)\n                break\n    except Exception:\n        pass\n\nif sel:\n    url = f\"https://duckduckgo.com/?q=!ducky {urllib.parse.quote(sel)}\"\n    subprocess.run([\"open\", url])\n'",
+        "show_command": false,
         "hide": "always",
-        "reveal_target": "center",
-        "allow_concurrent_runs": true,
-        "use_new_terminal": true
-    },
-    {
-        "label": "Open Typst Preview",
-        "command": "start http://127.0.0.1:23635/",
-        "use_new_terminal": true,
-        "allow_concurrent_runs": false,
+        "show_summary": false,
         "reveal": "never",
-        "reveal_target": "dock",
+        "use_new_terminal": false,
+    },
+    {
+        "label": "man",
+        "command": "python3 -c '\nimport os, re\n\nsel = os.environ.get(\"ZED_SELECTED_TEXT\", \"\").strip()\nif not sel and os.environ.get(\"ZED_FILE\"):\n    try:\n        row = int(os.environ.get(\"ZED_ROW\", 1)) - 1\n        col = int(os.environ.get(\"ZED_COLUMN\", 1)) - 1\n        with open(os.environ[\"ZED_FILE\"]) as f:\n            line = f.readlines()[row]\n        for m in re.finditer(r\"\\w+\", line):\n            if m.start() <= col <= m.end():\n                sel = m.group(0)\n                break\n    except Exception:\n        pass\n\nif sel:\n    os.execvp(\"man\", [\"man\", sel])\nelse:\n    print(\"Nessuna parola trovata sotto il cursore.\")\n'",
+        "reveal_target": "center",
+        "show_command": false,
+        "use_new_terminal": true,
+    },
+    {
+        "label": "LazyGit",
+        "command": "lazygit",
+        "shell": {
+            "program": "sh",
+        },
+        "hide": "on_success",
+        "reveal_target": "center",
+        "show_summary": false,
+        "show_command": false,
+        "allow_concurrent_runs": true,
+        "use_new_terminal": true,
+    },
+    {
+        "label": "splitjoin",
+        "command": "python3",
+        "args": [
+            "-S",
+            "~/.config/zed/scripts/splitjoin.py",
+            // "%USERPROFILE%\.config\zed\scripts\splitjoin.py",
+            "$ZED_FILE",
+            "$ZED_ROW",
+            "$ZED_COLUMN",
+        ],
+        "reveal": "never",
+        "use_new_terminal": false,
         "hide": "always",
-        "shell": "system",
-        "show_summary": true,
-        "show_command": true
-    }
-    // {
-    //     "label": "Build",
-    //     "command": "nvim ${ZED_FILE}",
-    //     "env": {},
-    //     "use_new_terminal": false,
-    //     "allow_concurrent_runs": false,
-    //     "reveal": "always",
-    //     "reveal_target": "center",
-    //     "hide": "always",
-    //     "shell": "system"
-    // }
+        "allow_concurrent_runs": true,
+    },
 ]
