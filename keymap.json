@@ -24,10 +24,10 @@
     {
         "context": "VimControl && !menu && vim_mode != operator",
         "bindings": {
-            "w": "vim::NextSubwordStart",
-            "b": "vim::PreviousSubwordStart",
-            "e": "vim::NextSubwordEnd",
-            "g e": "vim::PreviousSubwordEnd",
+            // "w": "vim::NextjubwordStart",
+            // "b": "vim::PreviousSubwordStart",
+            // "e": "vim::NextSubwordEnd",
+            // "g e": "vim::PreviousSubwordEnd",
         },
     },
     {
@@ -168,18 +168,18 @@
         "context": "(Workspace && !Editor && !Terminal) || (Editor && VimControl) || (ProjectPanel && not_editing)",
         "bindings": {
             // MAN
-            "m": [
-                "action::Sequence",
-                [
-                    "pane::SplitRight",
-                    [
-                        "task::Spawn",
-                        {
-                            "task_name": "man"
-                        }
-                    ]
-                ],
-            ],
+            // "m": [
+            //     "action::Sequence",
+            //     [
+            //         "pane::SplitRight",
+            //         [
+            //             "task::Spawn",
+            //             {
+            //                 "task_name": "man"
+            //             }
+            //         ]
+            //     ],
+            // ],
             "space l g": [
                 "task::Spawn",
                 {
@@ -194,44 +194,45 @@
                 }
             ],
             // PICKER
-            "space p f": "file_finder::Toggle",
-            "space p g": "pane::DeploySearch",
-            "space p w": "text_finder::Toggle",
-            "space p c": "command_palette::Toggle",
-            "space p o": "outline::Toggle",
-            "space p p": "projects::OpenRecent",
-            "space p s": "project_symbols::Toggle",
-            "space p t": "task::Spawn",
+            "space f": "file_finder::Toggle",
+            "space /": "pane::DeploySearch",
+            "space w": "text_finder::Toggle",
+            "space c": "vim::ToggleComments",
+            "space C": "vim::ToggleBlockComments",
+            "space s": "outline::Toggle",
+            "space p": "projects::OpenRecent",
+            "space S": "project_symbols::Toggle",
+            "space t": "task::Spawn",
             // UI
-            "space u h": "workspace::CloseAllDocks",
+            "space h": "workspace::CloseAllDocks",
             "space u f": "zed::ToggleFullScreen",
             "space u x": "zed::Extensions",
             // "space u e": "vim::ToggleProjectPanelFocus",
-            "space u e": "pane::RevealInProjectPanel",
-            "space u g": "git_panel::ToggleFocus",
-            "space u p": "diagnostics::Deploy",
-            "space u d": "debug_panel::ToggleFocus",
-            "space u t": "terminal_panel::Toggle",
+            "space e": "pane::RevealInProjectPanel",
+            "space g": "git_panel::ToggleFocus",
+            "space d": "diagnostics::Deploy",
+            "space G": "debug_panel::ToggleFocus",
+            "ctrl-/": "terminal_panel::Toggle",
             "space u c": "agent::ToggleFocus",
-            "space u o": "outline_panel::Toggle",
+            "space o": "outline_panel::Toggle",
             // CODE
-            "space c a": "editor::ToggleCodeActions",
-            "space c r": "editor::Rename",
-            "space c h": "editor::SwitchSourceHeader",
+            "space a": "editor::ToggleCodeActions",
+            "space r": "editor::Rename",
+            "space H": "editor::SwitchSourceHeader",
             // DEBUG
-            "space d b": "editor::ToggleBreakpoint",
-            "space d B": "debugger::ClearAllBreakpoints",
+            "space G b": "editor::ToggleBreakpoint",
+            "space G B": "debugger::ClearAllBreakpoints",
             // "space d c": [
             //     "task::Spawn",
             //     {
             //         "task_name": "Build",
             //     },
             // ],
-            "space d d": "debugger::Start",
-            "space d s": "debugger::Stop",
-            "space d m": "debugger::RunToCursor",
-            "space d l": "debugger::Continue",
-            "space d p": "debugger::Pause",
+            "space G d": "debugger::Start",
+            "space G s": "debugger::Stop",
+            "space G m": "debugger::RunToCursor",
+            "space G l": "debugger::Continue",
+            "space G p": "debugger::Pause",
         },
     },
     {
